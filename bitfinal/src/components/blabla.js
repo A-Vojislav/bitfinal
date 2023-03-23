@@ -1,10 +1,10 @@
 
 
-function blabla(){
+function Blabla(){
     <>
         <p>testiramo</p>
     </>
 
 }
 
-export default blabla
+export default Blabla;
