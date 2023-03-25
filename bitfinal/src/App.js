@@ -5,12 +5,7 @@ function App() {
 	return (
 		<div>
 			<Routes>
-<<<<<<< Updated upstream
-        <Route path='/' element={<Home />} /> 
-=======
-				<Route path="/" element={<Header></Header>}></Route>
-				<Route path="/" element={<Footer></Footer>}></Route>
->>>>>>> Stashed changes
+				<Route path="/" element={<Home />} />
 			</Routes>
 		</div>
 	);
