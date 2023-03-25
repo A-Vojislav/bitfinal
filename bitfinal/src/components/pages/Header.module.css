@@ -1,0 +1,41 @@
+.header{
+    display: flex;
+    width: 100%;
+    background-color: aquamarine;
+    margin: auto;
+    margin-bottom: 20px;
+    height: 10vh;
+}
+
+.header a{
+    text-decoration: none;
+    margin: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1.5%;
+}
+
+.header a:hover{
+    background-color: rgb(66, 131, 109);
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: aquamarine;
+    margin: auto;
+    margin-top: 20px;
+    height: 10vh;
+}
+
+.footer p{
+    text-decoration: none;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1%;
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "../Card";
+import styles from './CandidateReports.module.css'
 
 const CandidateReports = () => {
   const [candidates, setCandidates] = useState([]);
@@ -22,7 +23,7 @@ const CandidateReports = () => {
   }, []);
 
   return (
-    <div className="Candidate">
+    <div className={styles.presentCandidates}>
       {candidates.map((render) => {
         return (
           <Card

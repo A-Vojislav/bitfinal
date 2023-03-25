@@ -1,0 +1,33 @@
+.container{
+
+  width: 80%;
+  margin: auto;
+}
+
+.container h2{
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid;
+}
+th:hover{
+  background-color: rgb(66, 131, 109);
+}
+td:hover{
+  background-color: aquamarine;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+table {
+  animation: fade-in 1s ease-in-out;
+}
+
+tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease-in-out;
+}
