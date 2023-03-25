@@ -38,7 +38,7 @@ function SingleCandidate() {
     useEffect(() => {
         fetchCandidate();
         fetchReports();
-    }, [id]);
+    }, []);
 
     return (
         <>
