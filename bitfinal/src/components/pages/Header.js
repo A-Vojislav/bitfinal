@@ -5,6 +5,10 @@ function Header() {
 	return (
 		<div>
 			<Link to="/">Home page</Link>
+<<<<<<< Updated upstream
+=======
+			<Link to="">Candidates</Link>
+>>>>>>> Stashed changes
 		</div>
 	);
 }
