@@ -1,3 +1,0 @@
-# bitfinal
-Final
-Poy
