@@ -1,9 +1,9 @@
-import React from 'react'
+import styles from './Header.module.css';
 
 function Footer() {
   return (
-    <div>
-      Footer
+    <div className={styles.footer}>
+      <p>@Bit Students 2023</p>
     </div>
   )
 }
