@@ -7,7 +7,6 @@ function Home() {
         <>
             <Header />
 
-                Main page
                 <CandidateReports />
 
             <Footer />
