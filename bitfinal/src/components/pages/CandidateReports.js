@@ -1,42 +1,88 @@
 import { useState, useEffect } from "react";
-import Card from "../Card";
-import styles from './CandidateReports.module.css'
+import Card from "../servicePages/Card";
+import SearchBar from "../searchBar/SearchBar";
+import NoData from '../servicePages/NoData';
+import Loading from '../servicePages/Loading';
+import ErrorPage from '../servicePages/ErrorPage';
+import styles from "./CandidateReports.module.css";
 
 const CandidateReports = () => {
-  const [candidates, setCandidates] = useState([]);
-  const API_URL = "http://localhost:3333/api/candidates";
+	const [candidates, setCandidates] = useState([]);
+	const [filterCandidates, setFilterCandidates] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
+	const [hasError, setHasError] = useState(false);
 
-  async function fetchUsers() {
-    const response = await fetch(API_URL, {
-      method: "GET",
-      params: {
-        accessToken: "ey...Yc",
-        Authorization: "Bearer",
-      },
-    });
-    const data = await response.json();
-    setCandidates(data.slice(0, 6));
-  }
+	const API_URL = "http://localhost:3333/api/candidates";
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+	async function fetchUsers() {
+		try {
+			const response = await fetch(API_URL, {
+				method: "GET",
+				params: {
+					accessToken: "ey...Yc",
+					Authorization: "Bearer",
+				},
+			});
+			const data = await response.json();
+			setCandidates(data.slice(0, 6));
+			setFilterCandidates(data.slice(0, 6));
+			setIsLoading(false);
+		} catch {
+			setHasError(true);
+			setIsLoading(false);
+		}
+	}
 
-  return (
-    <div className={styles.presentCandidates}>
-      {candidates.map((render) => {
-        return (
-          <Card
-            key={render.id}
-            id={render.id}
-            name={render.name}
-            email={render.email}
-            avatar={render.avatar}
-          />
-        );
-      })}
-    </div>
-  );
+	useEffect(() => {
+		fetchUsers();
+	}, []);
+
+	function renderHome() {
+		if (filterCandidates.length === 0) {
+			return <NoData />;
+		}
+		if (filterCandidates.length > 0 ) {
+			return (
+				<>
+					{filterCandidates.map((render) => {
+						return (
+							<Card
+								key={render.id}
+								id={render.id}
+								name={render.name}
+								email={render.email}
+								avatar={render.avatar}
+							/>
+						);
+					})}
+				</>
+			);
+		}
+
+	}
+
+	const handleSearch = (query) => {
+		const filtered = candidates.filter((user) => {
+			const name = `${user.name}`.toLowerCase();
+			return name.includes(query.toLowerCase());
+		});
+		setFilterCandidates(filtered);
+	};
+
+
+	if (isLoading) {
+		return <Loading />;
+	}
+	if (hasError) {
+		return <ErrorPage />;
+	}
+
+
+	return (
+		<div className={styles.presentCandidates}>
+			<SearchBar onSearch={handleSearch} /> {renderHome()}
+		</div>
+	);
 };
 
 export default CandidateReports;

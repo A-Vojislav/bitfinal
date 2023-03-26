@@ -1,0 +1,19 @@
+.searchDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    width: 100%;
+}
+
+.searchInput{
+    height: 46px;
+    border: none;
+    border: 2px solid aquamarine;
+    border-radius: 15px;
+    font-size: 17px;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 3vh;
+    text-align: center;
+}
