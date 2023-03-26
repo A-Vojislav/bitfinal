@@ -1,0 +1,27 @@
+
+
+@keyframes taadaa { 
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+.imgContainer{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    animation: taadaa 3s ;
+}

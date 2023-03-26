@@ -1,44 +1,73 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styles from './SingleCandidate.module.css';
-import Header from "./pages/Header";
-import Footer from "./pages/Footer";
+import Header from "./Header";
+import Footer from "./Footer";
+import Loading from "../servicePages/Loading";
+import ErrorPage from "../servicePages/ErrorPage";
 
 function SingleCandidate() {
     const {id}= useParams();
     console.log(id)
     const [candidate, setCandidate] = useState({});
     const [reports, setReports] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+	const [hasError, setHasError] = useState(false);
+
     const API_URL = `http://localhost:3333/api/candidates/${id}`;
 
     async function fetchCandidate() {
-        const response = await fetch(API_URL, {
-            method: "GET",
-            params: {
-                accessToken: "ey...Yc",
-                Authorization: "Bearer",
-            },
-        });
-        const data = await response.json();
-        setCandidate(data);
-    }
+        try{
+            setIsLoading(true);
+            const response = await fetch(API_URL, {
+                method: "GET",
+                params: {
+                    accessToken: "ey...Yc",
+                    Authorization: "Bearer",
+                },
+            });
+            const data = await response.json();
+            setCandidate(data);
+            setIsLoading(false);
+        } catch{
+            setIsLoading(false);
+            setHasError(true);
+        }
+        }
 
     async function fetchReports() {
-        const response = await fetch(`http://localhost:3333/api/reports?candidateId=${id}`, {
-            method: "GET",
-            params: {
-                accessToken: "ey...Yc",
-                Authorization: "Bearer",
-            },
-        });
-        const data = await response.json();
-        setReports(data);
-    }
+        try{
+            const response = await fetch(`http://localhost:3333/api/reports?candidateId=${id}`, {
+                method: "GET",
+                params: {
+                    accessToken: "ey...Yc",
+                    Authorization: "Bearer",
+                },
+            });
+            const data = await response.json();
+            setReports(data);
+            setIsLoading(false);
+        } catch {
+            setIsLoading(false);
+            setHasError(true);
+        }
+        } 
+
 
     useEffect(() => {
         fetchCandidate();
         fetchReports();
     }, []);
+
+
+    if (isLoading) {
+		return <Loading />;
+	}
+	if (hasError) {
+		return <ErrorPage />;
+	}
+
+
 
     return (
         <>
