@@ -1,6 +1,8 @@
 .container{
-
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30%;
   margin: auto;
 }
 
@@ -12,10 +14,10 @@ table, th, td {
   border: 1px solid;
 }
 th:hover{
-  background-color: rgb(66, 131, 109);
+  background-color: #ace5f3;
 }
 td:hover{
-  background-color: aquamarine;
+  background-color: #ace5f3;
 }
 
 @keyframes fade-in {
