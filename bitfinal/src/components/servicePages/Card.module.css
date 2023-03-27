@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 30%;
-    border: 1px solid grey;
+    border: 0.18em solid #30acc5;
     border-radius: 15px;
     margin: 2% auto;
 }
@@ -12,7 +12,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    padding: 5%;
+    padding: 5%
   }
 
   .avatar{
@@ -29,7 +29,7 @@
 }
 
 .card a:hover{
-    background-color: aquamarine;
+    background-color: #ace5f3;
 }
 
 @media (max-width: 768px) {

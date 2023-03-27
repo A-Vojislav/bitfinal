@@ -1,11 +1,13 @@
-import styles from './Header.module.css';
+import styles from "./Header.module.css";
 
 function Footer() {
-  return (
-    <div className={styles.footer}>
-      <p>@Bit Students 2023</p>
-    </div>
-  )
+	return (
+		<div className={styles.footerContainer}>
+			<div className={styles.footer}>
+				<p>@Bit Students 2023</p>
+			</div>
+		</div>
+	);
 }
 
-export default Footer
+export default Footer;

@@ -1,7 +1,7 @@
 .header{
     display: flex;
     width: 100%;
-    background-color: aquamarine;
+    background-color: #55c9a2e5;
     margin: auto;
     margin-bottom: 20px;
     height: 10vh;
@@ -10,23 +10,28 @@
 .header a{
     text-decoration: none;
     margin: auto;
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    border: 1px solid black;
-    border-radius: 15px;
-    padding: 1.5%;
+    padding: 1.8%;
+    background-image: url('../pictures/button-15368.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 5%;
 }
 
-.header a:hover{
-    background-color: rgb(66, 131, 109);
-}
 
+.footerContainer{
+    position: sticky;
+    width: 100%;
+    bottom: 0px;
+    
+}
 .footer{
     display: flex;
     justify-content: center;
     text-align: center;
     width: 100%;
-    background-color: aquamarine;
+    background-color: rgba(85, 201, 162, 0.6);
     margin: auto;
     margin-top: 20px;
     height: 10vh;

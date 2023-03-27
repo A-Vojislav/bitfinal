@@ -5,14 +5,18 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Loading from "../servicePages/Loading";
 import ErrorPage from "../servicePages/ErrorPage";
+import ReportModal from "./ReportModal";
+import Button from "../servicePages/Button";
+
 
 function SingleCandidate() {
     const {id}= useParams();
-    console.log(id)
     const [candidate, setCandidate] = useState({});
     const [reports, setReports] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 	const [hasError, setHasError] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalReport, setModalReport] = useState({});
 
     const API_URL = `http://localhost:3333/api/candidates/${id}`;
 
@@ -63,45 +67,58 @@ function SingleCandidate() {
     if (isLoading) {
 		return <Loading />;
 	}
+    
 	if (hasError) {
 		return <ErrorPage />;
 	}
 
 
+    function handleOpenModal(report) {
+        setModalReport(report);
+        setIsModalOpen(true);
+    }
+    
+    function handleCloseModal() {
+        setIsModalOpen(false);
+        console.log('triger');
+    }
 
     return (
-        <>
-    <Header />
-        <div className={styles.container}>
-            <h2>{candidate.name}</h2>
-            <table className={styles.table}>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Company Name</th>
-                        <th>Interview Date</th>
-                        <th>Phase</th>
-                        <th>Status</th>
-                        <th>Note</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {reports.map((report) => (
-                        <tr key={report.id}>
-                            <td>{report.id}</td>
-                            <td>{report.companyName}</td>
-                            <td>{report.interviewDate}</td>
-                            <td>{report.phase}</td>
-                            <td>{report.status}</td>
-                            <td>{report.note}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-        <Footer />
-        </>
-    );
+			<>
+            {isModalOpen && <ReportModal onClose={handleCloseModal} modalReport={modalReport} />}
+
+				<Header />
+				<div className={styles.container}>
+					<h2>{candidate.name}</h2>
+					<table className={styles.table}>
+						<thead>
+							<tr>
+								<th>Company Name</th>
+								<th>Interview Date</th>
+								<th>Status</th>
+								<th>Note</th>
+							</tr>
+						</thead>
+						<tbody>
+							{reports.map((report) => (
+								<tr key={report.id}>
+									<td>{report.companyName}</td>
+									<td>{report.interviewDate}</td>
+									<td>{report.status}</td>
+									<td>
+										<Button onClick={() => handleOpenModal(report)}>
+											View Details
+										</Button>
+									</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+                    
+				</div>
+				<Footer />              
+			</>
+		);
 }
 
 export default SingleCandidate;

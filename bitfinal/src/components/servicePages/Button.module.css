@@ -1,0 +1,19 @@
+
+.button {
+    font: inherit;
+    color: black;
+    padding: 0.25rem 1rem;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .button:hover,
+  .button:active {
+    background: aquamarine;
+    border-color: aquamarine;
+  }
+  
+  .button:focus {
+    outline: none;
+  }

@@ -4,9 +4,12 @@ import styles from "./Header.module.css";
 
 
 function Header() {
+	
+
 	return (
 		<div className={styles.header}>
-			<Link to="/">Home page</Link>
+			<Link  to="/" >Home page</Link>
+
 		</div>
 	);
 }
