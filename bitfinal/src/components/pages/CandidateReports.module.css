@@ -17,3 +17,17 @@
     animation: fade-in 1.5s ease-in-out forwards;
 
 }
+
+
+@media screen and (max-width: 768px) {
+  .presentCandidates {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .presentCandidates {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

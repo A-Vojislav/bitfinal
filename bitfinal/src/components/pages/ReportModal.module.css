@@ -17,6 +17,7 @@
     overflow: auto;
     padding: 20px;
     margin: auto;
+    margin-top: 10%;
     background-color: white;
     border-radius: 5px;
   }
@@ -39,4 +40,21 @@ h1{
   float: right;
   width: 40%;
   overflow: auto;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .popup {
+    max-width: 60%;
+  }
+  
+  .main {
+    float: left;
+    width: 40%;
+  }
+
+  .note {
+    float: right;
+    width: 40%;
+  }
 }
