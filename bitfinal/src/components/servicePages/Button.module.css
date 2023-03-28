@@ -17,3 +17,20 @@
   .button:focus {
     outline: none;
   }
+
+
+  @media only screen and (max-width: 768px) {
+    .button {
+      font-size: 14px;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .button {
+      font-size: 12px;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+    }
+  }

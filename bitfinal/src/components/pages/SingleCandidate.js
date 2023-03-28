@@ -96,7 +96,7 @@ function SingleCandidate() {
 								<th>Company Name</th>
 								<th>Interview Date</th>
 								<th>Status</th>
-								<th>Note</th>
+								<th>View More</th>
 							</tr>
 						</thead>
 						<tbody>

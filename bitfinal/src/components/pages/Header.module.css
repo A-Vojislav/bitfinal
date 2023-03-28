@@ -5,6 +5,7 @@
     margin: auto;
     margin-bottom: 20px;
     height: 10vh;
+    font-size: 1.2rem;
 }
 
 .header a{
@@ -35,6 +36,7 @@
     margin: auto;
     margin-top: 20px;
     height: 10vh;
+    font-size: 1.2rem;
 }
 
 .footer p{
@@ -44,3 +46,45 @@
     border-radius: 15px;
     padding: 1%;
 }
+
+@media (max-width: 768px) {
+    .header {
+      height: 8vh;
+      font-size: 1rem;
+    }
+    .header a {
+        padding: 1%;
+        font-size: 0.8rem;
+      }
+
+      .footer {
+        height: 8vh;
+        font-size: 1rem;
+      }
+
+      .footer p {
+        padding: 0.8%;
+        font-size: 0.8rem;
+      }
+  }
+  
+  @media (max-width: 480px) {
+    .header {
+      height: 6vh;
+      font-size: 0.8rem;
+    }
+    .header a {
+        padding: 0.8%;
+        font-size: 0.6rem;
+      }
+
+      .footer {
+        height: 6vh;
+        font-size: 0.8rem;
+      }
+
+      .footer p {
+        padding: 0.6%;
+        font-size: 0.6rem;
+      }
+  }
