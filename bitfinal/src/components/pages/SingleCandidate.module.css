@@ -28,6 +28,15 @@ td:hover{
 table {
   animation: fade-in 1s ease-in-out;
 }
+.eye{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.eye:hover{
+  cursor: pointer;
+}
 
 tr:hover {
   background-color: rgba(0, 0, 0, 0.1);
