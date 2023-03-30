@@ -1,5 +1,5 @@
 import img from "../pictures/suchEmpty.jpg";
-import classes from "./NoData.module.css";
+import classes from "./css/NoData.module.css";
 import Button from "./Button";
 
 function NoData() {

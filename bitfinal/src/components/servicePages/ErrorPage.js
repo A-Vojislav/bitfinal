@@ -1,4 +1,4 @@
-import classes from './ErrorPage.module.css';
+import classes from './css/ErrorPage.module.css';
 
 function ErrorPage(){
     <>
