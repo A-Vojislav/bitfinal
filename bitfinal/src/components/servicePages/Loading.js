@@ -1,4 +1,4 @@
-import classes from './Loading.module.css';
+import classes from './css/Loading.module.css';
 
 function Loading (){
     return (

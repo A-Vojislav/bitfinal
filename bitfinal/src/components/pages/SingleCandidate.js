@@ -6,7 +6,7 @@ import Loading from "../servicePages/Loading";
 import ErrorPage from "../servicePages/ErrorPage";
 import ReportModal from "./ReportModal";
 
-import styles from "./SingleCandidate.module.css";
+import styles from "./css/SingleCandidate.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 

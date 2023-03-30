@@ -4,7 +4,7 @@ import SearchBar from "../searchBar/SearchBar";
 import NoData from '../servicePages/NoData';
 import Loading from '../servicePages/Loading';
 import ErrorPage from '../servicePages/ErrorPage';
-import styles from "./CandidateReports.module.css";
+import styles from "./css/CandidateReports.module.css";
 
 const CandidateReports = () => {
 	const [candidates, setCandidates] = useState([]);

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import styles from "./ReportModal.module.css";
+import styles from "./css/ReportModal.module.css";
 import Button from "../servicePages/Button";
 
 const ReportModal = (props) => {
