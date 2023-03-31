@@ -93,11 +93,11 @@ function RenderReportsPage() {
       {fetchReports.map((render) => {
         return (
           <ul key={render.id} className={styles.ulHolder}>
-            <li className={styles.firstLi}>{render.companyName}</li>
-            <li>{render.candidateName}</li>
-            <li>{formatDate(render.interviewDate)}</li>
-            <li>{render.status}</li>
-            <li>
+            <li className={styles.firstLi+' '+ styles.li}>{render.companyName}</li>
+            <li className={styles.li}>{render.candidateName}</li>
+            <li className={styles.li}>{formatDate(render.interviewDate)}</li>
+            <li className={styles.li}>{render.status}</li>
+            <li className={styles.li}>
               <FontAwesomeIcon
                 className={styles.eye}
                 role="button"
@@ -107,7 +107,7 @@ function RenderReportsPage() {
                 }}
               />
             </li>
-            <li>
+            <li className={styles.li}>
               <FontAwesomeIcon
                 role="button"
                 icon={faTrash}
