@@ -18,6 +18,11 @@
     outline: none;
   }
 
+  .button.disabled {
+    background: #ddd;
+    border-color: #ddd;
+    cursor: not-allowed;
+  }
 
   @media only screen and (max-width: 768px) {
     .button {

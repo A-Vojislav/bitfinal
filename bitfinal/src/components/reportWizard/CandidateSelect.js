@@ -8,13 +8,14 @@ import CreateReportCard from "../servicePages/CreateReportCard";
 
 import styles from "./CandidateSelect.module.css";
 
-const CandidateSelect = () => {
+const CandidateSelect = ( {handleNext}) => {
   const API_URL = "http://localhost:3333/api/candidates";
   const [candidates, setCandidates] = useState([]);
   const [filterCandidates, setFilterCandidates] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(false);
+
 
   async function fetchUsers() {
     try {
@@ -39,41 +40,48 @@ const CandidateSelect = () => {
     fetchUsers();
   }, []);
 
-  function userSelected(render) {
-    setSelected(render);
-    console.log(render.name);
+  function userSelected(candidate) {
+    setSelected(candidate);
+
   }
 
   function renderCandidates() {
     if (filterCandidates.length === 0) {
       return <NoData />;
     }
+    const clearSelection = () =>{
+      setFilterCandidates((prev) => prev.map((candidate) => ({ ...candidate, isSelected: false })));
+    }
     if (filterCandidates.length > 0) {
       return (
         <div className={styles.holder}>
-          <div className={styles.leftSide}>
-        dadadabla bal
-          </div>
 
-          <div className={styles.rightSide}>
             <h1>Select Candidate</h1>
-            {filterCandidates.map((render) => {
+            {filterCandidates.map((candidate) => {
               return (
-                <>
+                <div key={candidate.id}>
                   <CreateReportCard
-                    key={render.id}
-                    name={render.name}
-                    email={render.email}
-                    avatar={render.avatar}
+                    name={candidate.name}
+                    email={candidate.email}
+                    avatar={candidate.avatar}
+                    onClick={() => userSelected(candidate)}
+                    isSelected={selected && selected.id===candidate.id}
+                    clearSelection={clearSelection}
                   />
-                </>
+                </div>
               );
             })}
-                        <div className={styles.buttonHolder}>
-            <Button className={styles.button}>Next</Button>
+            <div className={styles.buttonHolder}>
+              <Button
+                className={styles.button}
+                disabled={selected}
+                onClick={()=>handleNext(selected)}
+              >
+                Next
+              </Button>
             </div>
           </div>
-        </div>
+
       );
     }
   }
@@ -96,10 +104,8 @@ const CandidateSelect = () => {
   return (
     <>
       <SearchBar onSearch={handleSearch} />
-      <h1>Create Report wizard</h1>
       bla
       {renderCandidates()}
-
     </>
   );
 };
