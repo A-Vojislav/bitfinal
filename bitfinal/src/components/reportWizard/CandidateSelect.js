@@ -52,6 +52,8 @@ const CandidateSelect = ( {handleNext}) => {
     const clearSelection = () =>{
       setFilterCandidates((prev) => prev.map((candidate) => ({ ...candidate, isSelected: false })));
     }
+
+    
     if (filterCandidates.length > 0) {
       return (
         <div className={styles.holder}>

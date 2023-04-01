@@ -9,11 +9,17 @@ import CompanySelect from "./CompanySelect";
 const WizardCreateReport = () => {
   
   const [candidateDone, setCandidateDone] = useState(false);
+  const [companiesDone, setCompaniesDone] = useState(false);
   const [firstPageData, setFirstPageData]= useState('')
 
   function handleNext(data){
     setCandidateDone(true)
     setFirstPageData(data)
+  }
+
+  function handleAfterCompanies(){
+    setCompaniesDone(true)
+    console.log('stigao');
   }
 
   return (
@@ -25,7 +31,7 @@ const WizardCreateReport = () => {
     {firstPageData && firstPageData.name}
 
             {!candidateDone&&<CandidateSelect handleNext={handleNext} />}
-            {candidateDone&& <CompanySelect  />}
+            {candidateDone&& <CompanySelect  handleAfterCompanies={handleAfterCompanies} />}
       <Footer />
     </>
   );
