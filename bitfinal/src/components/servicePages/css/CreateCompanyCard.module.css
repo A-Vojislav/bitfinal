@@ -1,0 +1,9 @@
+.companyCardContainer{
+  list-style: none;
+  display: flex;
+}
+
+
+.companyCardContainer.selected {
+    background-color: #ace5f3;
+  }
