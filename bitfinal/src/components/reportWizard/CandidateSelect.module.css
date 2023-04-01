@@ -1,0 +1,23 @@
+.holder{
+    width: 80%;
+    margin: auto;
+}
+
+.rightSide{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -1%;
+    width: 80%;
+    float: right;
+    border-left: 2px solid black;
+    animation: fade-in 1.5s ease-in-out forwards;
+}
+
+.buttonHolder{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 2%;
+    border-top: 2px solid #00CFFF;
+}

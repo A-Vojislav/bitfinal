@@ -1,0 +1,49 @@
+.reportCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  border: 0.18em solid #30acc5;
+  justify-content: space-between;
+  border-radius: 15px;
+  padding: 3%;
+  margin: 1% auto;
+}
+
+.reportCard {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.reportAvatar {
+  width: 10%;
+  margin: 2px auto;
+}
+
+.reportCardContainer:hover {
+  background-color: #ace5f3;
+}
+
+.reportCardContainer.selected {
+  background-color: #ace5f3;
+}
+
+@media (max-width: 768px) {
+  .reportCardContainer {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .reportCard {
+    padding: 5%;
+  }
+
+  .reportAvatar {
+    width: 40%;
+  }
+
+  .reportCard a {
+    padding: 1%;
+  }
+}

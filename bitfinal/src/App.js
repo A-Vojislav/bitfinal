@@ -3,6 +3,7 @@ import Home from "./components/pages/Home";
 import SingleCandidate from "./components/pages/SingleCandidate";
 import './App.css'
 import ReportsHome from "./components/ReportsAdmin/ReportsHome";
+import WizardCreateReport from "./components/reportWizard/WizardCreateReport";
 
 function App() {
 	return (
@@ -11,6 +12,7 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path='/singlecandidate/:id' element={<SingleCandidate />} />
 				<Route path='/reportsAdmin' element={<ReportsHome />} />
+				<Route path='/reportWizard' element={<WizardCreateReport />} />
 			</Routes>
 		</div>
 	);
