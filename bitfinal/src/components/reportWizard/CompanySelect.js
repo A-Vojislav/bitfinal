@@ -56,11 +56,9 @@ const CompanySelect= ({handleAfterCompanies}) =>{
             <>
 {            filterCompanies.map((company)=>{
                 return(
-                    <div key={company.id}>
+                    <div key={company.id} className={styles.renderHolder}>
                         <CreateCompanyCard
-                         key={company.id}
                          name={company.name}
-                         email={company.email}
                          onClick={() => userSelected(company)}
                          isSelected={selected && selected.id===company.id}
                          clearSelection={clearSelection}
@@ -69,8 +67,8 @@ const CompanySelect= ({handleAfterCompanies}) =>{
                 )
             })}
             <div className={styles.buttonHolder}>
+            <br/><br/>
             <Button
-              className={styles.button}
               disabled={selected}
             onClick={()=>handleAfterCompanies(selected)}
             >
@@ -88,8 +86,8 @@ const CompanySelect= ({handleAfterCompanies}) =>{
 
 
   const handleSearch = (query) => {
-    const filtered = companies.filter((user) => {
-      const name = `${user.name}`.toLowerCase();
+    const filtered = companies.filter((company) => {
+      const name = `${company.name}`.toLowerCase();
       return name.includes(query.toLowerCase());
     });
     setFilterCompanies(filtered);
@@ -104,7 +102,7 @@ const CompanySelect= ({handleAfterCompanies}) =>{
 
   
     return(
-        <div>
+        <div className={styles.selectCompany}>
             <h2>Select Company</h2>
             <SearchBar onSearch={handleSearch} />
             {renderCompanies()}
