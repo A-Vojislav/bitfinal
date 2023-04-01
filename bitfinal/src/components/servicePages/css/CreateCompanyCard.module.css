@@ -1,6 +1,11 @@
 .companyCardContainer{
   list-style: none;
+  margin: auto ;
   display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  width: 80%;
+  padding: 5%;
 }
 
 

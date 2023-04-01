@@ -5,7 +5,7 @@ import Button from "./Button";
 function NoData() {
 	return (
 		<div className={classes.container}>
-			<Button onClick={() => window.location.reload()}>Refresh</Button>
+			<Button disabled='false' onClick={() => window.location.reload()}>Refresh</Button>
 			<div className={classes.imgContainer}>
 				<img
 					src={img}

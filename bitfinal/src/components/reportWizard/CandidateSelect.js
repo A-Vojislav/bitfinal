@@ -106,7 +106,6 @@ const CandidateSelect = ( {handleNext}) => {
   return (
     <>
       <SearchBar onSearch={handleSearch} />
-      bla
       {renderCandidates()}
     </>
   );
