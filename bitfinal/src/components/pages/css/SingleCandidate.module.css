@@ -2,9 +2,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 25%;
+  padding-bottom: 5%;
   margin: auto;
   width: 80%;
+}
+
+
+.candidateContainer{
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  padding: 5%;
+  width: 60%;
+}
+
+.candidateContainer img{
+  width: 15%;
+  padding-right: 20%;
+}
+
+.candidatePrint{
+  text-align: left;
+font-size: 1em;
 }
 
 .container h2{
@@ -55,13 +74,29 @@ tr:hover {
 @media screen and (max-width: 768px) {
   .container {
     width: 80%;
-    padding-bottom: 40%;
+    padding-bottom: 20%;
   }
+  .candidateContainer{
+    display: flex;
+    width: 80%;
+  }
+  
+  .candidateContainer img{
+    width: 20%;
+  }
+  
+  .candidatePrint{
+    text-align: left;
+  font-size: 0.8em;
+  }
+  
+
+
 }
 
 @media screen and (max-width: 480px) {
   .container {
-    padding-bottom: 70%;
+    padding-bottom: 50%;
   }
   table, th, td {
     font-size: 0.8rem;
@@ -69,4 +104,14 @@ tr:hover {
   .container h2 {
     font-size: 1.2rem;
   }
+  
+  .candidateContainer img{
+    width: 25%;
+  }
+  
+  .candidatePrint{
+    text-align: left;
+  font-size: 0.6em;
+  }
+  
 }

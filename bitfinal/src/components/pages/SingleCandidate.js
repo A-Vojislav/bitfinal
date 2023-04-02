@@ -91,7 +91,14 @@ function SingleCandidate() {
 
 			<Header />
 			<div className={styles.container}>
-				<h2>{candidate.name}</h2>
+				<div className={styles.candidateContainer}>
+				<img src={candidate.avatar} />
+					<div className={styles.candidatePrint}>
+						<h2>Name : {candidate.name}</h2>
+						<p>Email : {candidate.email}</p>
+						<p>Education : {candidate.education}</p>
+					</div>
+				</div>
 				<table className={styles.table}>
 					<thead>
 						<tr>
