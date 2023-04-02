@@ -81,7 +81,6 @@ function SingleCandidate() {
 
 	function handleCloseModal() {
 		setIsModalOpen(false);
-		console.log("triger");
 	}
 
 	return (

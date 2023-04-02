@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../servicePages/Button";
 
-import styles from './FillReportDetails.module.css';
+import styles from './css/FillReportDetails.module.css';
 
 const FillReportDetails = ({ handleReportSubmit }) => {
   const [report, setReport] = useState({

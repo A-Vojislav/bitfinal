@@ -4,4 +4,6 @@ body{
     justify-content: center;
     margin: auto;
     background-color: whitesmoke;
+    height: 100%;
+    margin: 0;
   }

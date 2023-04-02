@@ -6,7 +6,7 @@ import CandidateSelect from "./CandidateSelect";
 import CompanySelect from "./CompanySelect";
 import FillReportDetails from "./FIllReportDetails";
 
-import styles from './WizardCreateReport.module.css';
+import styles from "./css/WizardCreateReport.module.css";
 
 const WizardCreateReport = () => {
   const [candidateDone, setCandidateDone] = useState(false);
@@ -75,20 +75,22 @@ const WizardCreateReport = () => {
       <Header />
       <h1>Create Report wizard</h1> <br />
       <div className={styles.holder}>
-
-      <div className={styles.leftSide}>
-            <div className={styles.static}>
-              <ul className={styles.ListHolder}>
-                <li className={styles.present}>{ firstPageData? firstPageData.name : 'Select Candidate'}</li>
-                <li className={styles.present}>{secondPageData? secondPageData.name :'Select Company'}</li>
-                <li className={styles.present}>{thirdPageData? thirdPageData.id :'Select details'}</li>
-              </ul>
-
-            </div>
-      </div>
-      <div className={styles.rightSide}>
-        {renderWizard()}
-      </div>
+        <div className={styles.leftSide}>
+          <div className={styles.static}>
+            <ul className={styles.ListHolder}>
+              <li className={styles.present}>
+                {firstPageData ? firstPageData.name : "Select Candidate"}
+              </li>
+              <li className={styles.present}>
+                {secondPageData ? secondPageData.name : "Select Company"}
+              </li>
+              <li className={styles.present}>
+                {thirdPageData ? thirdPageData.id : "Select details"}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={styles.rightSide}>{renderWizard()}</div>
       </div>
       <Footer />
     </div>
