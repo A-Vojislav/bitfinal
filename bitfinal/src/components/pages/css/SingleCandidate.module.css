@@ -2,8 +2,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 15%;
+  padding-bottom: 5%;
   margin: auto;
+  width: 80%;
+}
+
+
+.candidateContainer{
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  padding: 5%;
+  width: 60%;
+}
+
+.candidateContainer img{
+  width: 15%;
+  padding-right: 20%;
+}
+
+.candidatePrint{
+  text-align: left;
+font-size: 1em;
 }
 
 .container h2{
@@ -12,10 +32,15 @@
 
 table, th, td {
   border: 1px solid;
+  width: fit-content;
+}
+th, td{
+  height: 5vh;
 }
 th:hover{
   background-color: #ace5f3;
 }
+
 td:hover{
   background-color: #ace5f3;
 }
@@ -28,12 +53,14 @@ td:hover{
 table {
   animation: fade-in 1s ease-in-out;
 }
+
 .eye{
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
 }
+
 .eye:hover{
   cursor: pointer;
 }
@@ -41,4 +68,50 @@ table {
 tr:hover {
   background-color: rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease-in-out;
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+    padding-bottom: 20%;
+  }
+  .candidateContainer{
+    display: flex;
+    width: 80%;
+  }
+  
+  .candidateContainer img{
+    width: 20%;
+  }
+  
+  .candidatePrint{
+    text-align: left;
+  font-size: 0.8em;
+  }
+  
+
+
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding-bottom: 50%;
+  }
+  table, th, td {
+    font-size: 0.8rem;
+  }
+  .container h2 {
+    font-size: 1.2rem;
+  }
+  
+  .candidateContainer img{
+    width: 25%;
+  }
+  
+  .candidatePrint{
+    text-align: left;
+  font-size: 0.6em;
+  }
+  
 }
